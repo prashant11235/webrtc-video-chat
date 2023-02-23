@@ -1,0 +1,18 @@
+@startuml
+
+actor Bob #red
+participant Server
+actor Alice #blue
+
+Bob -> Server: Offer SDP
+Server -> Alice: Offer SDP
+Alice -> Server: Answer SDP
+Server -> Bob: Answer SDP
+
+Bob -> Server: ICE Candidate (A)
+Server -> Alice: ICE Candidate (A)
+Alice -> Server: ICE Candidate (B)
+Server -> Bob: ICE Candidate (B)
+
+newpage Connection Established
+@enduml
